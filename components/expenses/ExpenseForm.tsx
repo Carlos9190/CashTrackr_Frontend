@@ -29,7 +29,7 @@ export default function ExpenseForm({expense}: ExpenseFormProps) {
                     id="amount"
                     className="w-full p-3  border border-gray-100 bg-white"
                     type="number"
-                    placeholder="Cantidad Gasto"
+                    placeholder="Cantidad gasto"
                     name="amount"
                     defaultValue={expense?.amount}
                 />
