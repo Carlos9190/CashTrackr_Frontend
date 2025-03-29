@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CashTrackr Frontend
 
-## Getting Started
+## 📌 Description
+This is the frontend for the **CashTrackr** project, a financial tracking application developed with the **PENN stack** (*PostgreSQL, Express.js, Next.js, and Node.js*). It provides a user interface for managing expenses and finances.
 
-First, run the development server:
+---
 
+## 🛠 Technologies Used
+
+- **Next.js** - React framework for server-side rendering and static site generation
+- **TypeScript** - Static typing for JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Chakra UI** - Component library for building accessible UI
+- **React Toastify** - Toast notifications
+- **Zod** - Schema validation
+- **React Circular Progressbar** - Circular progress indicators
+
+---
+
+## 🚀 Installation
+
+### 1️⃣ Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Carlos9190/CashTrackr_Frontend.git
+cd CashTrackr_Frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install dependencies
+```bash
+npm install  # or yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3️⃣ Create a .env file in the project's root directory and define the following variables:
+```env
+API_URL=http://localhost:4000/api
+NEXT_PUBLIC_URL=http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4️⃣ Start the development server
+```bash
+npm run dev  # or yarn dev
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📌 Main Dependencies
+```json
+{
+  "@chakra-ui/pin-input": "^2.1.0",
+  "@headlessui/react": "^2.2.0",
+  "@heroicons/react": "^2.2.0",
+  "@tailwindcss/forms": "^0.5.10",
+  "next": "14.2.24",
+  "react": "^18",
+  "react-circular-progressbar": "^2.2.0",
+  "react-dom": "^18",
+  "react-toastify": "^11.0.3",
+  "server-only": "^0.0.1",
+  "zod": "^3.24.2"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔧 Development Dependencies
+```json
+{
+  "@types/node": "^20",
+  "@types/react": "^18",
+  "@types/react-dom": "^18",
+  "eslint": "^8",
+  "eslint-config-next": "14.2.24",
+  "postcss": "^8",
+  "tailwindcss": "^3.4.1",
+  "typescript": "^5"
+}
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1️⃣ **Fork the repository**.
+
+2️⃣ **Create a branch** for your new feature or fix:
+   ```bash
+   git checkout -b new-feature
+   ```
+3️⃣ **Make changes and commit them**:
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4️⃣ **Submit a Pull Request** for review.
+
+---
+
+## 📩 Contact
+
+Developed by **Carlos Ibarra**.
+
+- GitHub: [Carlos9190](https://github.com/Carlos9190)
+- Backend Repository: [CashTrackr_Backend](https://github.com/Carlos9190/CashTrackr_Backend)
+
