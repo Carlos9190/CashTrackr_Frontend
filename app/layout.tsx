@@ -1,14 +1,20 @@
-import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
+import "./globals.css";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CashTrackr - Manage Your Finances",
-  description: "CashTrackr is the best app to manage your money, create budgets, and track your expenses efficiently.",
+  description:
+    "CashTrackr is the best app to manage your money, create budgets, and track your expenses efficiently.",
   keywords: "finances, budgeting, expense tracking, money management",
-  authors: [{ name: "Carlos Eduardo Ibarra Manzano", url: "https://www.carlos-fullstack.com" }],
+  authors: [
+    {
+      name: "Carlos Eduardo Ibarra Manzano",
+      url: "https://www.carlos-fullstack.com",
+    },
+  ],
   metadataBase: new URL("https://cashtrackr.carlos-fullstack.com"),
   alternates: {
     canonical: "/",

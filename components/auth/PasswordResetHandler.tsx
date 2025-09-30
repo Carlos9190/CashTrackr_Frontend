@@ -1,25 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import ValidateTokenForm from "./ValidateTokenForm"
-import ResetPasswordForm from "./ResetPasswordForm"
+import { useState } from "react";
+import ValidateTokenForm from "./ValidateTokenForm";
+import ResetPasswordForm from "./ResetPasswordForm";
 
 export default function PasswordResetHandler() {
-  const [isValidToken, setIsValidToken] = useState(false)
-  const [token, setToken] = useState('')
+  const [isValidToken, setIsValidToken] = useState(false);
+  const [token, setToken] = useState("");
 
   return (
     <>
-      {!isValidToken ?
+      {!isValidToken ? (
         <ValidateTokenForm
           setIsValidToken={setIsValidToken}
           token={token}
           setToken={setToken}
-        /> :
-        <ResetPasswordForm
-          token={token}
         />
-      }
+      ) : (
+        <ResetPasswordForm token={token} />
+      )}
     </>
-  )
+  );
 }

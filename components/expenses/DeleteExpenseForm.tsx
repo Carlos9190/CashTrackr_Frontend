@@ -1,58 +1,59 @@
-import { useParams, useSearchParams } from "next/navigation"
-import { DialogTitle } from "@headlessui/react"
-import { useFormState } from "react-dom"
-import deleteExpense from "@/actions/delete-expense-action"
-import { useEffect } from "react"
-import ErrorMessage from "../ui/ErrorMessage"
-import { toast } from "react-toastify"
+import { useParams, useSearchParams } from "next/navigation";
+import { DialogTitle } from "@headlessui/react";
+import { useFormState } from "react-dom";
+import deleteExpense from "@/actions/delete-expense-action";
+import { useEffect } from "react";
+import ErrorMessage from "../ui/ErrorMessage";
+import { toast } from "react-toastify";
 
 type DeleteExpenseForm = {
-  closeModal: () => void
-}
+  closeModal: () => void;
+};
 
 export default function DeleteExpenseForm({ closeModal }: DeleteExpenseForm) {
-  const { id: budgetId } = useParams()
-  const searchParams = useSearchParams()
-  const expenseId = searchParams.get('deleteExpenseId')!
+  const { id: budgetId } = useParams();
+  const searchParams = useSearchParams();
+  const expenseId = searchParams.get("deleteExpenseId")!;
 
   const deleteExpenseWithBudgetId = deleteExpense.bind(null, {
     budgetId: +budgetId,
-    expenseId: +expenseId
-  })
+    expenseId: +expenseId,
+  });
   const [state, dispatch] = useFormState(deleteExpenseWithBudgetId, {
     errors: [],
-    success: ''
-  })
+    success: "",
+  });
 
   useEffect(() => {
     if (state.success) {
-      toast.success(state.success)
-      closeModal()
+      toast.success(state.success);
+      closeModal();
     }
-  }, [state, closeModal])
+  }, [state, closeModal]);
 
   useEffect(() => {
     if (!Number.isInteger(+budgetId) || !Number.isInteger(+expenseId)) {
-      closeModal()
+      closeModal();
     }
-  }, [budgetId, closeModal, expenseId])
+  }, [budgetId, closeModal, expenseId]);
 
   return (
     <>
-      <DialogTitle
-        as="h3"
-        className="font-black text-4xl text-purple-950 my-5"
-      >
+      <DialogTitle as="h3" className="font-black text-4xl text-purple-950 my-5">
         Delete Expense
       </DialogTitle>
 
-      {state.errors.map(error => <ErrorMessage key={error}>{error}</ErrorMessage>)}
+      {state.errors.map((error) => (
+        <ErrorMessage key={error}>{error}</ErrorMessage>
+      ))}
 
       <p className="text-xl font-bold">
-        Confirm to delete the {''}
+        Confirm to delete the {""}
         <span className="text-amber-500">expense</span>
       </p>
-      <p className='text-gray-600 text-sm'>(Deleted expenses cannot be recovered)</p>
+      <p className="text-gray-600 text-sm">
+        (Deleted expenses cannot be recovered)
+      </p>
 
       <div className="grid grid-cols-2 gap-5 mt-10">
         <button
@@ -62,7 +63,7 @@ export default function DeleteExpenseForm({ closeModal }: DeleteExpenseForm) {
           Cancel
         </button>
         <button
-          type='button'
+          type="button"
           className="bg-red-500 w-full p-3 text-white uppercase font-bold hover:bg-red-600 cursor-pointer transition-colors"
           onClick={() => dispatch()}
         >
@@ -70,5 +71,5 @@ export default function DeleteExpenseForm({ closeModal }: DeleteExpenseForm) {
         </button>
       </div>
     </>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import PasswordResetHandler from "@/components/auth/PasswordResetHandler"
+import PasswordResetHandler from "@/components/auth/PasswordResetHandler";
 
 export default function NewPasswordPage() {
   return (
