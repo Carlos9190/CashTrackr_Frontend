@@ -1,4 +1,5 @@
 "use client"
+
 import { Fragment } from 'react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
@@ -13,7 +14,7 @@ export default function ExpenseMenu({ expenseId }: { expenseId: Expense['id'] })
         <div className="flex shrink-0 items-center gap-x-6">
             <Menu as="div" className="relative flex-none">
                 <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900">
-                    <span className="sr-only">opciones</span>
+                    <span className="sr-only">Options</span>
                     <EllipsisVerticalIcon className="h-9 w-9" aria-hidden="true" />
                 </MenuButton>
                 <Transition
@@ -32,7 +33,7 @@ export default function ExpenseMenu({ expenseId }: { expenseId: Expense['id'] })
                                 className='block px-3 py-1 text-sm leading-6 text-gray-900'
                                 onClick={() => router.push(location.pathname + `?showModal=true&editExpenseId=${expenseId}`)}
                             >
-                                Editar Gasto
+                                Edit Expense
                             </button>
                         </MenuItem>
 
@@ -42,7 +43,7 @@ export default function ExpenseMenu({ expenseId }: { expenseId: Expense['id'] })
                                 className='block px-3 py-1 text-sm leading-6 text-red-500'
                                 onClick={() => router.push(location.pathname + `?showModal=true&deleteExpenseId=${expenseId}`)}
                             >
-                                Eliminar Gasto
+                                Delete Expense
                             </button>
                         </MenuItem>
                     </MenuItems>

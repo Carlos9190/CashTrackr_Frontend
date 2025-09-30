@@ -8,7 +8,6 @@ type ActionStateType = {
 }
 
 export async function confirmAccount(token: string, prevState: ActionStateType) {
-
     const confirmToken = TokenSchema.safeParse(token)
     if (!confirmToken.success) {
         return {
@@ -17,7 +16,7 @@ export async function confirmAccount(token: string, prevState: ActionStateType) 
         }
     }
 
-    // Confirmar usuario
+    // Confirm user
     const url = `${process.env.API_URL}/auth/confirm-account`
     const req = await fetch(url, {
         method: 'POST',

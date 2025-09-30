@@ -1,6 +1,6 @@
-import Logo from "@/components/ui/Logo";
-import ToastNotification from "@/components/ui/ToastNotification";
-import Link from "next/link";
+import Logo from "@/components/ui/Logo"
+import ToastNotification from "@/components/ui/ToastNotification"
+import Link from "next/link"
 
 export default function AuthLayout({
     children,

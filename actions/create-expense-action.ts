@@ -22,7 +22,7 @@ export default async function createExpense(budgetId: number, prevState: ActionS
         }
     }
 
-    // Generar gasto
+    // Generate expense
     const token = getToken()
     const url = `${process.env.API_URL}/budgets/${budgetId}/expenses`
     const req = await fetch(url, {
@@ -39,8 +39,8 @@ export default async function createExpense(budgetId: number, prevState: ActionS
 
     const json = await req.json()
 
-    if(!req.ok){
-        const {error} = ErrorResponseSchema.parse(json)
+    if (!req.ok) {
+        const { error } = ErrorResponseSchema.parse(json)
         return {
             errors: [error],
             success: ''

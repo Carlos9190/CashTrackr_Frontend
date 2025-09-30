@@ -1,10 +1,10 @@
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { DialogTitle } from "@headlessui/react";
-import { useFormState } from "react-dom";
-import { deleteBudget } from "@/actions/delete-budget-action";
-import ErrorMessage from "../ui/ErrorMessage";
-import { useCallback, useEffect } from "react";
-import { toast } from "react-toastify";
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
+import { DialogTitle } from "@headlessui/react"
+import { useFormState } from "react-dom"
+import { deleteBudget } from "@/actions/delete-budget-action"
+import ErrorMessage from "../ui/ErrorMessage"
+import { useCallback, useEffect } from "react"
+import { toast } from "react-toastify"
 
 export default function ConfirmPasswordForm() {
     const pathname = usePathname();
@@ -17,7 +17,7 @@ export default function ConfirmPasswordForm() {
         hideModal.delete('deleteBudgetId');
         router.replace(`${pathname}?${hideModal}`);
     }, [searchParams, pathname, router]);
-    
+
     const deleteBudgetWithPassword = deleteBudget.bind(null, budgetId);
     const [state, dispatch] = useFormState(deleteBudgetWithPassword, {
         errors: [],
@@ -31,20 +31,19 @@ export default function ConfirmPasswordForm() {
         }
     }, [state, closeModal]);
 
-
     return (
         <div className="md:px-8 lg:px-10 flex flex-col items-center text-center">
             <DialogTitle
                 as="h3"
                 className="font-black text-3xl sm:text-4xl text-purple-950 my-5"
             >
-                Eliminar Presupuesto
+                Delete Budget
             </DialogTitle>
             <p className="text-lg sm:text-xl font-bold">
-                Ingresa tu Password para {''}
-                <span className="text-amber-500">eliminar el presupuesto {''}</span>
+                Enter your password to {''}
+                <span className="text-amber-500">delete the budget</span>
             </p>
-            <p className='text-gray-600 text-sm'>(Un presupuesto eliminado y sus gastos no se pueden recuperar)</p>
+            <p className='text-gray-600 text-sm'>(A deleted budget and its expenses cannot be recovered)</p>
 
             {state.errors.map(error => <ErrorMessage key={error}>{error}</ErrorMessage>)}
             <form
@@ -56,7 +55,7 @@ export default function ConfirmPasswordForm() {
                     <label
                         className="font-bold text-lg sm:text-2xl"
                         htmlFor="password"
-                    >Ingresa tu Password para eliminar</label>
+                    >Enter your password to confirm</label>
                     <input
                         id="password"
                         type="password"
@@ -68,13 +67,13 @@ export default function ConfirmPasswordForm() {
                 <div className="flex justify-between gap-2">
                     <input
                         type="submit"
-                        value='Eliminar Presupuesto'
+                        value='Delete Budget'
                         className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black cursor-pointer transition-colors"
                     />
                     <button
                         className="bg-amber-500 hover:bg-amber-600 w-full p-3 rounded-lg text-white font-black cursor-pointer transition-colors"
                         onClick={closeModal}
-                    >Cancelar</button>
+                    >Cancel</button>
                 </div>
             </form>
         </div>

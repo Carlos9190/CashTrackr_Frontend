@@ -1,4 +1,5 @@
 "use client"
+
 import { authenticate } from "@/actions/authenticate-user-action"
 import { useEffect } from "react"
 import { useFormState } from "react-dom"
@@ -33,7 +34,7 @@ export default function LoginForm() {
                     <input
                         id="email"
                         type="email"
-                        placeholder="Email de Registro"
+                        placeholder="Registration email"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="email"
                     />
@@ -46,7 +47,7 @@ export default function LoginForm() {
 
                     <input
                         type="password"
-                        placeholder="Password de Registro"
+                        placeholder="Registration password"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="password"
                     />
@@ -54,8 +55,8 @@ export default function LoginForm() {
 
                 <input
                     type="submit"
-                    value='Iniciar Sesión'
-                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black  text-xl cursor-pointer"
+                    value='Log In'
+                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black text-xl cursor-pointer"
                 />
             </form>
         </>

@@ -1,4 +1,5 @@
 "use server"
+
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { ErrorResponseSchema, LoginSchema } from "@/src/schemas"
@@ -8,7 +9,6 @@ type ActionStateType = {
 }
 
 export async function authenticate(prevState: ActionStateType, formData: FormData) {
-
     const loginCredentials = {
         email: formData.get('email'),
         password: formData.get('password')
@@ -42,7 +42,7 @@ export async function authenticate(prevState: ActionStateType, formData: FormDat
         }
     }
 
-    // Settear Cookies
+    // Set Cookies
     cookies().set({
         name: 'CASHTRACKR_TOKEN',
         value: json,

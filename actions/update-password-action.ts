@@ -8,14 +8,14 @@ type ActionStateType = {
     success: string
 }
 
-export async function updatePassword(prevState: ActionStateType, formData: FormData){
+export async function updatePassword(prevState: ActionStateType, formData: FormData) {
     const userPassword = UpdatePasswordSchema.safeParse({
         current_password: formData.get('current_password'),
         password: formData.get('password'),
         password_confirmation: formData.get('password_confirmation')
     })
 
-    if(!userPassword.success){
+    if (!userPassword.success) {
         return {
             errors: userPassword.error.issues.map(issue => issue.message),
             success: ''
@@ -37,8 +37,8 @@ export async function updatePassword(prevState: ActionStateType, formData: FormD
     })
 
     const json = await req.json()
-    if(!req.ok){
-        const {error} = ErrorResponseSchema.parse(json)
+    if (!req.ok) {
+        const { error } = ErrorResponseSchema.parse(json)
         return {
             errors: [error],
             success: ''

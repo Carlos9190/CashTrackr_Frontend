@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next"
+import { Outfit } from "next/font/google"
+import "./globals.css"
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CashTrackr - Gestiona tus Finanzas",
-  description: "CashTrackr es la mejor aplicación para administrar tu dinero, llevar presupuestos y controlar tus gastos de forma eficiente.",
-  keywords: "finanzas, presupuesto, control de gastos, administración de dinero",
+  title: "CashTrackr - Manage Your Finances",
+  description: "CashTrackr is the best app to manage your money, create budgets, and track your expenses efficiently.",
+  keywords: "finances, budgeting, expense tracking, money management",
   authors: [{ name: "Carlos Eduardo Ibarra Manzano", url: "https://www.carlos-fullstack.com" }],
   metadataBase: new URL("https://cashtrackr.carlos-fullstack.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "CashTrackr - Gestiona tus Finanzas",
-    description: "Administra tu dinero de manera fácil y eficiente con CashTrackr.",
+    title: "CashTrackr - Manage Your Finances",
+    description: "Easily and efficiently manage your money with CashTrackr.",
     url: "https://cashtrackr.carlos-fullstack.com",
     siteName: "CashTrackr",
     images: [
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
         url: "/CashTrackrPreview.webp",
         width: 1200,
         height: 630,
-        alt: "CashTrackr - Gestión de Finanzas",
+        alt: "CashTrackr - Finance Management",
       },
     ],
-    locale: "es_ES",
+    locale: "en_US",
     type: "website",
   },
   robots: {
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
@@ -49,4 +49,3 @@ export default function RootLayout({
     </html>
   );
 }
-

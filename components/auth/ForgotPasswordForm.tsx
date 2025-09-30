@@ -25,7 +25,7 @@ export default function ForgotPasswordForm() {
 
     return (
         <form
-            className=" mt-14 space-y-5"
+            className="mt-14 space-y-5"
             noValidate
             action={dispatch}
         >
@@ -36,7 +36,7 @@ export default function ForgotPasswordForm() {
 
                 <input
                     type="email"
-                    placeholder="Email de registro"
+                    placeholder="Registration email"
                     className="w-full border border-gray-300 p-3 rounded-lg"
                     name="email"
                 />
@@ -44,8 +44,8 @@ export default function ForgotPasswordForm() {
 
             <input
                 type="submit"
-                value='Enviar instrucciones'
-                className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black  text-xl cursor-pointer "
+                value='Send instructions'
+                className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black text-xl cursor-pointer"
             />
         </form>
     )

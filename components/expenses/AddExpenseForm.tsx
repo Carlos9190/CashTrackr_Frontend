@@ -7,7 +7,7 @@ import ErrorMessage from "../ui/ErrorMessage"
 import { useEffect } from "react"
 import { toast } from "react-toastify"
 
-export default function AddExpenseForm({closeModal}: {closeModal: () => void}) {
+export default function AddExpenseForm({ closeModal }: { closeModal: () => void }) {
     const { id } = useParams()
 
     const createExpenseWithBudgetId = createExpense.bind(null, +id)
@@ -29,11 +29,12 @@ export default function AddExpenseForm({closeModal}: {closeModal: () => void}) {
                 as="h3"
                 className="font-black text-4xl text-purple-950 my-5"
             >
-                Agregar Gasto
+                Add Expense
             </DialogTitle>
 
-            <p className="text-xl font-bold">Llena el formulario y crea un {''}
-                <span className="text-amber-500">gasto</span>
+            <p className="text-xl font-bold">
+                Fill out the form to register a new {''}
+                <span className="text-amber-500">expense</span>
             </p>
 
             {state.errors.map(error => <ErrorMessage key={error}>{error}</ErrorMessage>)}
@@ -42,13 +43,12 @@ export default function AddExpenseForm({closeModal}: {closeModal: () => void}) {
                 noValidate
                 action={dispatch}
             >
-
                 <ExpenseForm />
 
                 <input
                     type="submit"
                     className="bg-amber-500 w-full p-3 text-white uppercase font-bold hover:bg-amber-600 cursor-pointer transition-colors"
-                    value='Registrar Gasto'
+                    value='Register Expense'
                 />
             </form>
         </>

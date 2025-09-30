@@ -38,7 +38,7 @@ export default function RegisterForm() {
                 <input
                     id="email"
                     type="email"
-                    placeholder="Email de Registro"
+                    placeholder="Registration Email"
                     className="w-full border border-gray-300 p-3 rounded-lg"
                     name="email"
                 />
@@ -47,10 +47,10 @@ export default function RegisterForm() {
             <div className="flex flex-col gap-2">
                 <label
                     className="font-bold text-2xl"
-                >Nombre</label>
+                >Name</label>
                 <input
                     type="name"
-                    placeholder="Nombre de Registro"
+                    placeholder="Registration Name"
                     className="w-full border border-gray-300 p-3 rounded-lg"
                     name="name"
                 />
@@ -62,7 +62,7 @@ export default function RegisterForm() {
                 >Password</label>
                 <input
                     type="password"
-                    placeholder="Password de Registro"
+                    placeholder="Registration Password"
                     className="w-full border border-gray-300 p-3 rounded-lg"
                     name="password"
                 />
@@ -71,11 +71,11 @@ export default function RegisterForm() {
             <div className="flex flex-col gap-2">
                 <label
                     className="font-bold text-2xl"
-                >Repetir Password</label>
+                >Confirm Password</label>
                 <input
                     id="password_confirmation"
                     type="password"
-                    placeholder="Repite Password de Registro"
+                    placeholder="Repeat Registration Password"
                     className="w-full border border-gray-300 p-3 rounded-lg"
                     name="password_confirmation"
                 />
@@ -83,7 +83,7 @@ export default function RegisterForm() {
 
             <input
                 type="submit"
-                value='Registrarme'
+                value='Register'
                 className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black  text-xl cursor-pointer block"
             />
         </form>

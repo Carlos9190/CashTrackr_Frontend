@@ -1,21 +1,21 @@
 import { DraftExpense } from "@/src/schemas"
 
-type ExpenseFormProps ={
+type ExpenseFormProps = {
     expense?: DraftExpense
 }
 
-export default function ExpenseForm({expense}: ExpenseFormProps) {
+export default function ExpenseForm({ expense }: ExpenseFormProps) {
     return (
         <>
             <div className="mb-5">
                 <label htmlFor="name" className="text-sm uppercase font-bold">
-                    Nombre Gasto
+                    Expense Name
                 </label>
                 <input
                     id="name"
-                    className="w-full p-3  border border-gray-100  bg-white"
+                    className="w-full p-3 border border-gray-100 bg-white"
                     type="text"
-                    placeholder="Nombre del Gasto"
+                    placeholder="Enter expense name"
                     name="name"
                     defaultValue={expense?.name}
                 />
@@ -23,13 +23,13 @@ export default function ExpenseForm({expense}: ExpenseFormProps) {
 
             <div className="mb-5">
                 <label htmlFor="amount" className="text-sm uppercase font-bold">
-                    Cantidad Gasto
+                    Expense Amount
                 </label>
                 <input
                     id="amount"
-                    className="w-full p-3  border border-gray-100 bg-white"
+                    className="w-full p-3 border border-gray-100 bg-white"
                     type="number"
-                    placeholder="Cantidad gasto"
+                    placeholder="Enter expense amount"
                     name="amount"
                     defaultValue={expense?.amount}
                 />

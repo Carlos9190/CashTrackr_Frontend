@@ -2,7 +2,7 @@
 
 import getToken from "@/src/auth/token"
 import { Budget, DraftBudgetSchema, ErrorResponseSchema, SuccessSchema } from "@/src/schemas"
-import { revalidatePath, revalidateTag } from "next/cache"
+import { revalidateTag } from "next/cache"
 
 type ActionStateType = {
     errors: string[]
@@ -10,13 +10,12 @@ type ActionStateType = {
 }
 
 export async function editBudget(budgetId: Budget['id'], prevState: ActionStateType, formData: FormData) {
-
     const budgetData = {
         name: formData.get('name'),
         amount: formData.get('amount')
     }
     const budget = DraftBudgetSchema.safeParse(budgetData)
-    if(!budget.success){
+    if (!budget.success) {
         return {
             errors: budget.error.issues.map(issue => issue.message),
             success: ''
@@ -38,8 +37,8 @@ export async function editBudget(budgetId: Budget['id'], prevState: ActionStateT
     })
     const json = await req.json()
 
-    if(!req.ok){
-        const {error} = ErrorResponseSchema.parse(json)
+    if (!req.ok) {
+        const { error } = ErrorResponseSchema.parse(json)
         return {
             errors: [error],
             success: ''

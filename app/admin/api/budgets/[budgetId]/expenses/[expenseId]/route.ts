@@ -13,8 +13,8 @@ export async function GET(request: Request, { params }: { params: { budgetId: st
     })
 
     const json = await req.json()
-    if(!req.ok){
-        return Response.json(json.error, {status: 403})
+    if (!req.ok) {
+        return Response.json(json.error, { status: 403 })
     }
 
     return Response.json(json)

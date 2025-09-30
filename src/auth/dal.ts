@@ -1,4 +1,5 @@
-import 'server-only'; // Para que no se vaya del server hacía el cliente
+import 'server-only'
+
 // Data Access Layer
 import { cache } from "react"
 import { redirect } from "next/navigation"

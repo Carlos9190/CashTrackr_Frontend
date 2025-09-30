@@ -18,12 +18,12 @@ export default function ProfileForm({ user }: { user: User }) {
         if (state.success) {
             toast.success(state.success)
         }
-    }, [state]) 
+    }, [state])
 
     return (
         <>
             <form
-                className=" mt-14 space-y-5"
+                className="mt-14 space-y-5"
                 noValidate
                 action={dispatch}
             >
@@ -33,10 +33,14 @@ export default function ProfileForm({ user }: { user: User }) {
                 <div className="flex flex-col gap-5">
                     <label
                         className="font-bold text-2xl"
-                    >Nombre</label>
+                        htmlFor="name"
+                    >
+                        Name
+                    </label>
                     <input
-                        type="name"
-                        placeholder="Tu Nombre"
+                        id="name"
+                        type="text"
+                        placeholder="Your Name"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="name"
                         defaultValue={user.name}
@@ -45,12 +49,15 @@ export default function ProfileForm({ user }: { user: User }) {
                 <div className="flex flex-col gap-5">
                     <label
                         className="font-bold text-2xl"
-                    >Email</label>
+                        htmlFor="email"
+                    >
+                        Email
+                    </label>
 
                     <input
                         id="email"
                         type="email"
-                        placeholder="Tu Email"
+                        placeholder="Your Email"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="email"
                         defaultValue={user.email}
@@ -59,8 +66,8 @@ export default function ProfileForm({ user }: { user: User }) {
 
                 <input
                     type="submit"
-                    value='Guardar Cambios'
-                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black  text-xl cursor-pointer"
+                    value='Save Changes'
+                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black text-xl cursor-pointer"
                 />
             </form>
         </>

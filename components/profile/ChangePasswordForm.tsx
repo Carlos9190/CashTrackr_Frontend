@@ -24,7 +24,7 @@ export default function ChangePasswordForm() {
     return (
         <>
             <form
-                className=" mt-14 space-y-5"
+                className="mt-14 space-y-5"
                 noValidate
                 action={dispatch}
                 ref={ref}
@@ -35,11 +35,13 @@ export default function ChangePasswordForm() {
                     <label
                         className="font-bold text-2xl"
                         htmlFor="current_password"
-                    >Password Actual</label>
+                    >
+                        Current Password
+                    </label>
                     <input
                         id="current_password"
                         type="password"
-                        placeholder="Password Actual"
+                        placeholder="Current Password"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="current_password"
                     />
@@ -48,11 +50,13 @@ export default function ChangePasswordForm() {
                     <label
                         className="font-bold text-2xl"
                         htmlFor="password"
-                    >Nuevo Password</label>
+                    >
+                        New Password
+                    </label>
                     <input
                         id="password"
                         type="password"
-                        placeholder="Password de Registro"
+                        placeholder="New Password"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="password"
                     />
@@ -61,12 +65,14 @@ export default function ChangePasswordForm() {
                     <label
                         htmlFor="password_confirmation"
                         className="font-bold text-2xl"
-                    >Repetir Password</label>
+                    >
+                        Confirm Password
+                    </label>
 
                     <input
                         id="password_confirmation"
                         type="password"
-                        placeholder="Repite Password de Registro"
+                        placeholder="Confirm New Password"
                         className="w-full border border-gray-300 p-3 rounded-lg"
                         name="password_confirmation"
                     />
@@ -74,8 +80,8 @@ export default function ChangePasswordForm() {
 
                 <input
                     type="submit"
-                    value='Cambiar Password'
-                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black  text-xl cursor-pointer"
+                    value='Change Password'
+                    className="bg-purple-950 hover:bg-purple-800 w-full p-3 rounded-lg text-white font-black text-xl cursor-pointer"
                 />
             </form>
         </>

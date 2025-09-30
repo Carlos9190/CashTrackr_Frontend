@@ -35,7 +35,7 @@ export default async function AdminLayout({
 
             <footer className='py-5'>
                 <p className='text-center'>
-                    Todos los Derechos Reservados {new Date().getFullYear()}
+                    All Rights Reserved {new Date().getFullYear()}
                 </p>
             </footer>
         </>

@@ -8,7 +8,7 @@ export function formatCurrency(quantity: number) {
 export function formatDate(isoString: string) {
     const date = new Date(isoString)
 
-    const formatter = new Intl.DateTimeFormat('es-ES', {
+    const formatter = new Intl.DateTimeFormat('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'

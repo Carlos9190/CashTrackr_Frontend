@@ -1,4 +1,5 @@
 "use client"
+
 import { Budget } from "@/src/schemas"
 import BudgetForm from "./BudgetForm"
 import { useFormState } from "react-dom"
@@ -11,8 +12,8 @@ import { useRouter } from "next/navigation"
 export default function EditBudgetForm({ budget }: { budget: Budget }) {
 
     const router = useRouter()
-    const editeBudgetWithId = editBudget.bind(null, budget.id)
-    const [state, dispatch] = useFormState(editeBudgetWithId, {
+    const editBudgetWithId = editBudget.bind(null, budget.id)
+    const [state, dispatch] = useFormState(editBudgetWithId, {
         errors: [],
         success: ''
     })
@@ -30,15 +31,14 @@ export default function EditBudgetForm({ budget }: { budget: Budget }) {
             noValidate
             action={dispatch}
         >
-            {state.errors.map(error => <ErrorMessage key={error} >{error}</ErrorMessage>)}
-            <BudgetForm
-                budget={budget}
-            />
+            {state.errors.map(error => <ErrorMessage key={error}>{error}</ErrorMessage>)}
+
+            <BudgetForm budget={budget} />
 
             <input
                 type="submit"
                 className="bg-amber-500 w-full p-3 text-white uppercase font-bold hover:bg-amber-600 cursor-pointer transition-colors"
-                value='Guardar Cambios'
+                value='Save Changes'
             />
         </form>
     )

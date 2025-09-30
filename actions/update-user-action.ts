@@ -9,13 +9,13 @@ type ActionStateType = {
     success: string
 }
 
-export async function updateUser(prevState: ActionStateType, formData: FormData){
+export async function updateUser(prevState: ActionStateType, formData: FormData) {
     const profile = ProfileFormSchema.safeParse({
         name: formData.get('name'),
         email: formData.get('email'),
     })
 
-    if(!profile.success){
+    if (!profile.success) {
         return {
             errors: profile.error.issues.map(issue => issue.message),
             success: ''
@@ -37,8 +37,8 @@ export async function updateUser(prevState: ActionStateType, formData: FormData)
     })
 
     const json = await req.json()
-    if(!req.ok){
-        const {error} = ErrorResponseSchema.parse(json)
+    if (!req.ok) {
+        const { error } = ErrorResponseSchema.parse(json)
         return {
             errors: [error],
             success: ''

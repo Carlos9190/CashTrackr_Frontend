@@ -15,19 +15,18 @@ type ActionStateType = {
 }
 
 export default async function editExpense({ budgetId, expenseId }: BudgetAndExpenseIdType, prevState: ActionStateType, formData: FormData) {
-    
     const expense = DraftExpenseSchema.safeParse({
         name: formData.get('name'),
         amount: formData.get('amount')
     })
-    if(!expense.success){
+    if (!expense.success) {
         return {
             errors: expense.error.errors.map(issue => issue.message),
             success: ''
         }
     }
 
-    // Actualizar el gasto
+    // Update expense
     const token = getToken()
     const url = `${process.env.API_URL}/budgets/${budgetId}/expenses/${expenseId}`
     const req = await fetch(url, {
@@ -43,8 +42,8 @@ export default async function editExpense({ budgetId, expenseId }: BudgetAndExpe
     })
 
     const json = await req.json()
-    if(!req.ok){
-        const {error} = ErrorResponseSchema.parse(json)
+    if (!req.ok) {
+        const { error } = ErrorResponseSchema.parse(json)
         return {
             errors: [error],
             success: ''

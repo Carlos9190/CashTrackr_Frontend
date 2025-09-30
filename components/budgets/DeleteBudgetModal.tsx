@@ -1,16 +1,16 @@
 "use client"
 
-import { Fragment } from 'react';
-import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import ConfirmPasswordForm from './ConfirmPasswordForm';
+import { Fragment } from 'react'
+import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import ConfirmPasswordForm from './ConfirmPasswordForm'
 
 export default function DeleteBudgetModal() {
     const router = useRouter();
     const pathName = usePathname();
     const searchParams = useSearchParams();
     const deleteBudgetId = searchParams.get('deleteBudgetId');
-    const show = deleteBudgetId ? true : false;
+    const show = !!deleteBudgetId;
 
     const hideModal = new URLSearchParams(searchParams.toString());
     hideModal.delete('deleteBudgetId');

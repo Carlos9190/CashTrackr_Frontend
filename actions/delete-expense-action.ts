@@ -33,7 +33,6 @@ export default async function deleteExpense({ budgetId, expenseId }: BudgetAndEx
         }
     }
 
-    
     const success = SuccessSchema.parse(json)
     revalidatePath(`/admin/budgets/${budgetId}`)
     return {

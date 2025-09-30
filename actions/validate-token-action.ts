@@ -8,7 +8,6 @@ type ActionStateType = {
 }
 
 export async function validateToken(token: string, prevState: ActionStateType) {
-
     const restPasswordToken = TokenSchema.safeParse(token)
     if (!restPasswordToken.success) {
         return {
