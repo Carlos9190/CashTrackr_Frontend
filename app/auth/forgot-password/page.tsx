@@ -27,7 +27,7 @@ export default function ForgotPasswordPage() {
         </Link>
 
         <Link href="/auth/register" className="text-center text-gray-500">
-          Don't have an account? Sign up
+          Do not have an account? Sign up
         </Link>
       </nav>
     </div>

@@ -24,7 +24,7 @@ export default function LoginPage() {
 
       <nav className="mt-10 flex flex-col space-y-4 w-full max-w-md">
         <Link href="/auth/register" className="text-center text-gray-500">
-          Don't have an account? Sign up
+          Do not have an account? Sign up
         </Link>
 
         <Link
